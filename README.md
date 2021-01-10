@@ -1,1 +1,1 @@
-https://adebayo-oduwobi-trip-planning.netlify.app
+https://adebayo-oduwobi-tripplanner.netlify.app
