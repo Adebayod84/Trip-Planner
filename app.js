@@ -17,7 +17,7 @@ const URL =
   "https://api.mapbox.com/geocoding/v5/mapbox.places/Los%20Angeles.json?bbox=-97.325875, 49.766204, -96.953987, 49.99275  &access_token=YOUR_MAPBOX_ACCESS_TOKEN";
 
 const TRIP_URL = "https://api.winnipegtransit.com/api/v3/trip-planner";
-const TRIP_API = "08HxFtfF6e12R63uA3K4";
+const TRIP_API = "bc48tF4O8hcBz_1j-kkc";
 start.addEventListener("keypress", (e) => {
   if (e.key === "Enter") {
     const searchValue = start.value;
@@ -145,6 +145,8 @@ planBtn.addEventListener("click", () => {
     errors.innerHTML = "Origin and destination cannot be same";
     return;
   }
+
+  myTrip.innerHTML = '';
   getTrip();
 });
 const getTrip = async () => {
@@ -163,6 +165,7 @@ const getTrip = async () => {
   });
   
   let recommendedPath = report.plans[report.plans.length - 1];
+//   console.log(recommendedPath);
   for (path of recommendedPath.segments) {
     updateTrips(path);
   }
